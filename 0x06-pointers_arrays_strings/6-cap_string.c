@@ -1,30 +1,44 @@
-char *cap_string(char *s)
+/*
+ * 0x06. C - More pointers, arrays and strings
+ * task 6
+ */
+#include "main.h"
+/**
+ * cap_string - capitalizes all words of a string
+ * @src: string refrance
+ * Return: *src "all words of a string capital"
+ */
+char *cap_string(char *src)
 {
 	int i;
 
 	i = 0;
-	while (s[i] != '\0')
+	if ((src[i] >= 'a') && (src[i] <= 'z'))
 	{
-		if ((s[i - 1] == ' ' || s[i - 1] == '\n'
-		|| s[i - 1] == '\t' || s[i - 1] == ','
-		|| s[i - 1] == ';' || s[i - 1] == '!'
-		|| s[i - 1] == '?' || s[i - 1] == '"'
-		|| s[i - 1] == '(' || s[i - 1] == ')'
-		|| s[i - 1] == '{' || s[i - 1] == '}'
-		|| s[i - 1] == '.')
-		&& (s[i] >= 'a' && s[i] <= 'z'))
+		src[i] = src[i] - 32;
+	}
+	while (src[i] != '\0')
+	{
+		if ((src[i] == ' ')
+		|| (src[i] == '\t')
+		|| (src[i] == '\n')
+		|| (src[i] == ',')
+		|| (src[i] == ';')
+		|| (src[i] == '.')
+		|| (src[i] == '!')
+		|| (src[i] == '?')
+		|| (src[i] == '"')
+		|| (src[i] == '(')
+		|| (src[i] == ')')
+		|| (src[i] == '{')
+		|| (src[i] == '}'))
 		{
-			s[i] = s[i] - 32;
-		}
-		else if ((s[0] >= 97 && s[0] <= 122))
-		{
-			s[0] = s[0] - 32;
-		}
-		else
-		{
-			s[i] = s[i];
+			if ((src[i + 1] >= 'a') && (src[i + 1] <= 'z'))
+			{
+				src[i + 1] = src[i + 1] - 32;
+			}
 		}
 		i++;
 	}
-	return (s);
+	return (src);
 }
