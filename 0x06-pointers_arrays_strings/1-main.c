@@ -24,4 +24,7 @@ int main(void)
     printf("%s", ptr);
     return (0);
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> e0fb1bac923dd282dfc04a2098a8c1744d89cd84
