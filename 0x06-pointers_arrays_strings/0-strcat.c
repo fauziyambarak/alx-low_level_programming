@@ -1,5 +1,4 @@
 #include "main.h"
-<<<<<<< HEAD
 /**
  * _strcat - concatenates two strings
  * @dest: input value
@@ -25,7 +24,6 @@ char *_strcat(char *dest, char *src)
 		j++;
 	}
 	dest[i] = '\0';
-=======
 #include <string.h>
 /**
  * _strcat - concatenates two strings
@@ -43,6 +41,5 @@ char *_strcat(char *dest, char *src)
 		dest[len + i] = src[i];
 	}
 	dest[len + i] = '\0';
->>>>>>> e0fb1bac923dd282dfc04a2098a8c1744d89cd84
 	return (dest);
 }
